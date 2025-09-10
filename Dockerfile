@@ -5,10 +5,11 @@ FROM tomcat:9.0-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
 # Copy file .war của bạn thành ROOT.war để Tomcat tự deploy
-COPY war-exports/ch07.war /usr/local/tomcat/webapps/ROOT.war
+COPY ch07.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose cổng 8080 (Render sẽ tự map qua $PORT)
 EXPOSE 8080
 
 # Chạy Tomcat
+
 CMD ["catalina.sh", "run"]
